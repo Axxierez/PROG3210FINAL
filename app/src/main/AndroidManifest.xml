@@ -31,7 +31,11 @@
         </service>
 
         <activity android:name=".AddToListViewActivity" />
-        <activity android:name=".ListViewActivity"></activity>
+        <activity android:name=".ListViewActivity" />
+        <activity
+            android:name=".ContactInfoActivity"
+            android:label="@string/title_activity_contact_info"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
