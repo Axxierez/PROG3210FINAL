@@ -8,14 +8,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.io.InputStream;
 
 public class MainActivity extends AppCompatActivity {
 
+    private AppDatabase database;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        database = AppDatabase.getDatabase(getApplicationContext());
         setContentView(R.layout.activity_main);
         new DownloadImageTask((ImageView) findViewById(R.id.asyncImage))
                 .execute("http://riot-web-cdn.s3-us-west-1.amazonaws.com/lolesports/s3fs-public/styles/centered/public/genericlcslogo_1.png?HZrefvUtQ6mHmPfurPqrzDAkmoDFI11A&itok=cj1Xybn1");
@@ -46,10 +49,8 @@ public class MainActivity extends AppCompatActivity {
             String urldisplay = urls[0];
             Bitmap mIcon11 = null;
             try {
-                InputStream in = new java.net.URL(urldisplay).openStream();
-                mIcon11 = BitmapFactory.decodeStream(in);
+                mIcon11 = BitmapFactory.decodeStream(new java.net.URL(urldisplay).openStream());
             } catch (Exception e) {
-                e.printStackTrace();
             }
             return mIcon11;
         }
@@ -57,5 +58,9 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(Bitmap result) {
             bmImage.setImageBitmap(result);
         }
+    }
+
+    public void ToastRandomItem(View view){
+        Toast.makeText(getApplicationContext(), database.itemDao().getRandomItem().getSmallText(), Toast.LENGTH_SHORT).show();
     }
 }

@@ -23,4 +23,7 @@ public interface ListViewItemDao {
 
     @Query("delete from ListViewItem")
     void removeAllItems();
+
+    @Query("select * from ListViewItem order by RANDOM() limit 1")
+    public ListViewItem getRandomItem();
 }
