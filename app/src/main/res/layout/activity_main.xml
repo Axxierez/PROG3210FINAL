@@ -17,6 +17,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="167dp"
+        android:onClick="ShowDataEntry"
         android:text="Save Data" />
 
     <Button
@@ -27,5 +28,6 @@
         android:layout_alignStart="@+id/btnSaveData"
         android:layout_below="@+id/btnSaveData"
         android:layout_marginTop="62dp"
+        android:onClick="ShowListView"
         android:text="View Data" />
 </RelativeLayout>

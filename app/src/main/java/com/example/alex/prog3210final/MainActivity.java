@@ -13,7 +13,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);}
 
 
-        public void ShowListView(View view){
+
+    public void ShowDataEntry(View view){
+        Intent intent = new Intent(this, AddToListViewActivity.class);
+        startActivity(intent);
+    }
+
+
+    public void ShowListView(View view){
             Intent intent = new Intent(this, ListViewActivity.class);
             startActivity(intent);
     }

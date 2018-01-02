@@ -33,9 +33,8 @@ public class ListViewActivity extends ListActivity {
 
         List<ListViewItem> items = database.itemDao().getAllItems();
 
-
         for (int i = 0; i < items.size(); i++) {
-            System.out.println(items.get(i));
+            String temp =items.get(i).getBigText();
             list.add(putData(items.get(i).getBigText(),items.get(i).getSmallText()));
         }
 
@@ -44,8 +43,8 @@ public class ListViewActivity extends ListActivity {
 
     private HashMap<String, String> putData(String label, String text) {
         HashMap<String, String> item = new HashMap<String, String>();
-        item.put("label", label);
-        item.put("text", text);
+        item.put("Label", label);
+        item.put("Text", text);
         return item;
     }
 }
