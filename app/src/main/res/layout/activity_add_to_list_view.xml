@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:padding="10dp" android:layout_height="match_parent" android:layout_width="match_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditText
+        android:id="@+id/editBigText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:ems="10"
+        android:hint="Label"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editSmallText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/editBigText"
+        android:layout_alignRight="@+id/editBigText"
+        android:layout_below="@+id/editBigText"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:hint="Text"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editSmallText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="47dp"
+        android:onClick="addToListView"
+        android:text="Save" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/btnSave"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/btnSave"
+        android:layout_marginTop="39dp"
+        android:text="Add To List View" />
+</RelativeLayout>
